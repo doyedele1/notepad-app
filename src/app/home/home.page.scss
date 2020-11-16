@@ -25,3 +25,12 @@
 #container a {
   text-decoration: none;
 }
+
+ion-item {
+  --ion-background-color: #fff;
+  width: 95%;
+  margin: 15px auto;
+  font-weight: bold;
+  border-radius: 20px;
+  --border-radius: 20px;
+}
