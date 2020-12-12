@@ -7,12 +7,32 @@ import { NotesService } from '../services/notes.service';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
+
 export class HomePage implements OnInit {
 
   constructor(private alertCtrl: AlertController, private navCtrl: NavController, public notesService: NotesService) {
-
+  
   }
 
+  onClick(event){
+    let systemDark = window.matchMedia("(prefers-color-scheme: dark)");
+    systemDark.addListener(this.colorTest);
+    if(event.detail.checked){
+      document.body.setAttribute('data-theme', 'dark');
+    }
+    else{
+      document.body.setAttribute('data-theme', 'light');
+    }
+  }
+
+   colorTest(systemInitiatedDark) {
+    if (systemInitiatedDark.matches) {
+      document.body.setAttribute('data-theme', 'dark');		
+    } else {
+      document.body.setAttribute('data-theme', 'light');
+    }
+  }
+  
   ngOnInit() {
     // call the load method to handle loading in the data from storage as soon as the app is started
     this.notesService.load();
@@ -43,7 +63,5 @@ export class HomePage implements OnInit {
     }).then((alert) => {
       alert.present();
     });
-
   }
-
 }
