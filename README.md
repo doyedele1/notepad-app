@@ -5,3 +5,5 @@ Basic functions a user can perform on the notepad application:
 - View a list of notes stored in local storage
 - View details about each note created
 - Switch to a dark mode theme
+
+![](notepad.gif)
