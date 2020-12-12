@@ -1,6 +1,5 @@
 <ion-header>
-
-  <ion-toolbar color="primary">
+  <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/notes"></ion-back-button>
     </ion-buttons>
@@ -11,11 +10,11 @@
       </ion-button>
     </ion-buttons>
   </ion-toolbar>
-
 </ion-header>
 
 <ion-content class="ion-padding">
-  <ion-textarea 
+  <ion-textarea
+    auto-grow="true"
     (input)="noteChanged()" 
     [(ngModel)]="note.content" 
     placeholder="Type what's on your mind here..."
