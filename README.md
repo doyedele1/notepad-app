@@ -1,4 +1,4 @@
-# notepad-app
+# iNote
 
 Basic functions a user can perform on the notepad application:
 - Create, edit and delete notes
